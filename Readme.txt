@@ -127,6 +127,11 @@ Testing :
 
  1. rspec restaurant_spec.rb
 
+ Known Improvements
+
+ 1. Extract tests, the CSV files and the main libraries into separate directories
+ 
+
 
 
 
