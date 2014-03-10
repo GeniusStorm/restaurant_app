@@ -127,6 +127,23 @@ Testing :
 
  1. rspec restaurant_spec.rb
 
+
+ Design Details :
+
+ Two classes have been create that work together to get the cheapest restaurant
+ 1. RestaurantScanner Class: 
+ 	a.This class scans the input command and creates an array of restaurants objects consisting of id , price and item label. 
+ 	b.This class validates the values within the csv file and also the command .
+ 	c.It writes the cheapest hotel to STDOUT along with the exit code.
+
+ 2. Restaurant Class:
+    a. Take the array of the restaurants and ordered items and find the cheapest restaurants in 3 simple steps
+       - step1: find all the restaurants that can fullfill the order
+       - step2: calculate the order total for each fullfilling restaurant
+       - step3: find and return the restaurant with minimum order total
+
+  3. Also inline comments have been written for each function to explain the responsibility of each of the function.
+
  Known Improvements
 
  1. Extract tests, the CSV files and the main libraries into separate directories
