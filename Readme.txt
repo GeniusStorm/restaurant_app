@@ -109,7 +109,7 @@ rspec-mocks (2.14.4)
 
 Instructions :
 
-In order to run the different scenarios for the Restaurant App , diffeerent csv's exist for each case.
+In order to run the different scenarios for the Restaurant App , different csv's exist for each case.
 
 The following commands need to used to to test each of the cases
 
