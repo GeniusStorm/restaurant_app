@@ -113,13 +113,13 @@ In order to run the different scenarios for the Restaurant App , different csv's
 
 The following commands need to used to to test each of the cases . Please make sure that you are in the root of the app while you run this command.
 
-1. Input : ruby cheapest_restaurant.rb ./jurgensville_price_list1.csv ham_sandwich burrito tofu_log
+1. Input : ruby cheapest_restaurant.rb ./jurgensville_price_list.csv ham_sandwich burrito tofu_log
    Output : 3,14.0
 	
-2. Input : ruby cheapest_restaurant.rb ./jurgensville_price_list2.csv fancy_european_water extreme_fajita
+2. Input : ruby cheapest_restaurant.rb ./jurgensville_price_list.csv fancy_european_water extreme_fajita
    Output : 6, 11.0
 
-3. Input : ruby cheapest_restaurant.rb ./jurgensville_price_list3.csv chef_salad wine_spritzer
+3. Input : ruby cheapest_restaurant.rb ./jurgensville_price_list.csv chef_salad wine_spritzer
    Output : No output for this case
 
 Testing :
