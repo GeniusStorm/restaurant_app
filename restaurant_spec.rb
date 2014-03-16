@@ -15,7 +15,7 @@ describe Restaurant do
 	let(:no_csv_args) 	  {["./restaurant_app_test", "ham_sandwich", "burrito", "tofu_log"]}
 	let(:unsorted_order_items){["./restaurant_app_test.csv", "fettuccine_alfredo", "veggie_calzone"]}
 	let(:multiple_item_quantity){["./restaurant_app_test.csv", "lasagna", "pepsi" , "pepsi"]} #ordering 2 cokes and a steak sandwich
-	
+	let(:multiple_value_meal){["./restaurant_app_test.csv", "extreme_fajita", "extreme_fajita"]}
 
 	#restaurant scanner
 	context 'RestaurantScanner' do
@@ -103,8 +103,10 @@ describe Restaurant do
 		    Restaurant.find_cheapest_restaurant(restaurants.price_list, restaurants.items).should eq([7,7.00])
 		end
 
-
+	   it "return the chepeast cheapest item when with multiple value meal" do
+			restaurants = RestaurantScanner.new(multiple_value_meal)
+		    Restaurant.find_cheapest_restaurant(restaurants.price_list, restaurants.items).first.should eq(9)
+		    Restaurant.find_cheapest_restaurant(restaurants.price_list, restaurants.items).should eq([9,8.00])
+	   end
 	end
-
-
 end

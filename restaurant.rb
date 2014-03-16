@@ -36,8 +36,10 @@ class Restaurant
 		valid_items, final_menu_items =[], []
 		menu_items_by_restaurant(restaurants).each_value do |restaurant|
 		    restaurant.each do |rest| 
-				next if (order_items & rest.menu_item).empty? 
-				order_items.count(rest.menu_item.first).times{valid_items << rest.dup }
+				next if (order_items & rest.menu_item).empty? #skip item if not in ordered item
+				rest.menu_item.each do |menu_item|
+					order_items.count(menu_item).times{valid_items << rest.dup }
+				end
 			end
 		end
 		valid_items.group_by(&:id)

@@ -144,6 +144,13 @@ Testing :
   Assumptions :
   1. The CSV file being input should not have duplicate menu item. If tried with duplicate m both the menu items will be added up while calculating the total count.
 
+  2. Its also assumed that when ordering multiple value meals only one item from the value meal will be passed in the input multiple times. If all the items are passed then each items will be uniqualy considered as different order.
+  For Example : For a value meal containing extreme_fajita, jalapeno_poppers, extra_salsa
+    a.To give 2 orders of value meal just pass in extreme_fajita 2 times.You need to pass all the items . 
+    
+    b.If pass more than one item , for example , extreme_fajita jalapeno_poppers  extreme_fajita jalapeno_poppers
+    Then the program will create 4 orders.
+
  Known Improvements
 
  1. Extract tests, the CSV files and the main libraries into separate directories
