@@ -26,24 +26,27 @@ class Restaurant
 	def self.find_restaurants_with_all_order_items(restaurant_list, order_items)
 		restaurants_with_order_items = []
 		menu_items_by_restaurant(restaurant_list).each_value do |restaurant|
-		   restaurants_with_order_items	 << restaurant if (restaurant.collect(&:menu_item).flatten & order_items).length == order_items.length 
+		   restaurants_with_order_items	 << restaurant if (restaurant.collect(&:menu_item).flatten & order_items).length == order_items.uniq.length 
 		end
-		 restaurants_with_order_items.flatten
+		restaurants_with_order_items.flatten
 	end
 
 	#groups the restaurant menu by order item
 	def self.menu_items_by_order(restaurants, order_items)
-		valid_items =[]
+		valid_items, final_menu_items =[], []
 		menu_items_by_restaurant(restaurants).each_value do |restaurant|
-			valid_items << restaurant.find_all{|rest| !(order_items & rest.menu_item).empty? }
+		    restaurant.each do |rest| 
+				next if (order_items & rest.menu_item).empty? 
+				order_items.count(rest.menu_item.first).times{valid_items << rest.dup }
+			end
 		end
-		valid_items
+		valid_items.group_by(&:id)
 	end
 
 	#calculates the order total and returns an array containing the restaurant id and order total
 	def self.calculate_order_total_by_restaurant(restaurants, order_items)
 		order_total =[]
-		menu_items_by_order(restaurants,order_items).each do |restaurant|
+		menu_items_by_order(restaurants,order_items).each_value do |restaurant|
 		  order_total << [restaurant.first.id , restaurant.map(&:price).reduce(:+)]
 		end
 		order_total
@@ -51,7 +54,7 @@ class Restaurant
 
 	#find the restaurant with minimum total and return it
 	def self.get_cheapest_restaurant(restaurants)
-		restaurants.min_by{|restaurant| restaurant[1]}
+		restaurants.sort.min_by{|restaurant| restaurant[1]}
 	end
 
 end

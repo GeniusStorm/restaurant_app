@@ -8,4 +8,22 @@
 3, 2.00, steak_sandwich
 3, 6.50, veggie_bowl
 3, 5.50, chicken_pizza
-3, 2.00, coke	
+3, 2.00, coke
+5, 7.00, fettuccine_alfredo
+5, 4.00, veggie_calzone
+5, 3.00, strawberry_cheesecake
+6, 1.00, buffalo_wings
+6, 1.50, chicken_tenders
+6, 1.50, turkey_sandwich
+7, 4.00, lasagna
+7, 8.00, ravioli
+7, 1.50, pepsi
+4, 7.00, fettuccine_alfredo
+4, 4.00, veggie_calzone
+4, 3.00, strawberry_cheesecake	
+8, 4.00, fancy_european_water
+8, 6.00, extreme_fajita, jalapeno_poppers, extra_salsa
+9, 3.00, fancy_european_water
+9, 4.00, extreme_fajita, jalapeno_poppers, extra_salsa
+11, 5.00, lasagna
+11, 1.50, pepsi

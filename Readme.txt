@@ -114,13 +114,10 @@ In order to run the different scenarios for the Restaurant App , different csv's
 The following commands need to used to to test each of the cases . Please make sure that you are in the root of the app while you run this command.
 
 1. Input : ruby cheapest_restaurant.rb ./jurgensville_price_list.csv ham_sandwich burrito tofu_log
-   Output : 3,14.0
 	
 2. Input : ruby cheapest_restaurant.rb ./jurgensville_price_list.csv fancy_european_water extreme_fajita
-   Output : 6, 11.0
 
 3. Input : ruby cheapest_restaurant.rb ./jurgensville_price_list.csv chef_salad wine_spritzer
-   Output : No output for this case
 
 Testing :
  All the tests have been written using rspec . To run the testcases execute
@@ -143,6 +140,9 @@ Testing :
        - step3: find and return the restaurant with minimum order total
 
   3. Also inline comments have been written for each function to explain the responsibility of each of the function.
+
+  Assumptions :
+  1. The CSV file being input should not have duplicate menu item. If tried with duplicate m both the menu items will be added up while calculating the total count.
 
  Known Improvements
 
